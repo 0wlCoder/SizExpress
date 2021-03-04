@@ -319,6 +319,7 @@ class ActivateAccount(View):
             )
             return redirect("home")
 
+
 @login_required(login_url="login")
 def Affiliate_account(request):
     profile = Profile.objects.get(user=request.user)
@@ -337,6 +338,7 @@ def Affiliate_account(request):
     }
 
     return render(request, "Affiliate_account.html", Context)
+
 
 @login_required(login_url="login")
 def Bank_account_update(request):
@@ -413,6 +415,7 @@ def Bank_account_update(request):
 #         return redirect("resendmail")
 #     return render(request, "resend_activation_email.html")
 
+
 @login_required(login_url="login")
 def withdrawalmail(request):
 
@@ -458,3 +461,7 @@ def withdrawalmail(request):
             )
             return redirect("Affiliate_account")
     return render(request, "withdrawmail.html")
+
+
+def Delivery_home(request):
+    return render(request, "Delivery_home.html")

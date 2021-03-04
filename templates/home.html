@@ -114,7 +114,7 @@ https://templatemo.com/tm-540-lava-landing-page
             <nav class="main-nav">
               <!-- ***** Logo Start ***** -->
               <a
-                href="home"
+                href="{% url 'home' %}"
                 class="logo"
                 style="color: blue !important; font-style: normal !important"
               >
@@ -132,6 +132,9 @@ https://templatemo.com/tm-540-lava-landing-page
                 <li class="scroll-to-section">
                   <a href="{% url 'rates' %}" class="">Rates</a>
                 </li>
+                 
+                
+
                 <li class="submenu">
                   <a href="javascript:;">Contact Us </a>
                   <ul>
@@ -144,6 +147,7 @@ https://templatemo.com/tm-540-lava-landing-page
                     <li><a href="" class="menu-item">Facebook</a></li>
                   </ul>
                 </li>
+                
                 {% if user.is_authenticated %}
                 <li class="submenu">
                   <a class="">Hello,{{user.first_name }}</a>
@@ -287,6 +291,8 @@ https://templatemo.com/tm-540-lava-landing-page
                   your in kingston or portmore your package can be delievered to
                   a address of choice.
                 </p>
+
+                <a class="btn btn-primary" style="font-weight: bold; color:white"href="{% url 'Delivery_home' %}">View Delivery Cost</a>
               </div>
             </div>
           </div>

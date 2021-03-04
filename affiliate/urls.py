@@ -22,7 +22,8 @@ urlpatterns = [
     path("Affiliate_account/", views.Affiliate_account, name="Affiliate_account"),
     path("Bank_Update/", views.Bank_account_update, name="Bank_Update"),
     path("withdrawalmail/", views.withdrawalmail, name="withdrawalmail"),
-    # path("resendemail/", views.resendmail, name="resend_mail"),
+    path("Delivery_home/", views.Delivery_home, name="Delivery_home"),
+    # path("resendemail/", views.resendmail, name="resend_mail"),path("withdrawalmail/", views.withdrawalmail, name="withdrawalmail"),
     # path(
     #     "login/resendmail/",
     #     views.resendmail,
