@@ -1,0 +1,167 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login V1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="../static/login/images/icons/favicon.ico"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/vendor/animate/animate.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/css/util.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/login/css/main.css"
+    />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div class="limiter">
+      <div class="container-login100">
+        <div class="wrap-login100">
+          <div class="login100-pic js-tilt" data-tilt>
+            <img src="../static/login/images/img-01.png" alt="IMG" />
+          </div>
+
+          <form action="" method="POST" class="login100-form validate-form">
+            {% csrf_token%}
+            <span
+              style="color: black; font-size: 1.2em"
+              class="login100-form-title"
+            >
+              Let us get to know u a little better
+            </span>
+            <span style="font-weight: bold">Address</span>
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              {{e_P_F.address}}
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+              </span>
+            </div>
+            <span style="font-weight: bold"> Parish</span>
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              {{e_P_F.parish}}
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+              </span>
+            </div>
+
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <!-- {{e_P_F.trnnumber}} -->
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+              </span>
+            </div>
+            <span style="font-weight: bold"> Mobile Number </span>
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              {{e_P_F.mobilenumber}}
+              <span class="focus-input100"></span>
+              <span class="symbol-input100">
+                <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+              </span>
+            </div>
+
+            <div class="container-login100-form-btn">
+              <button class="login100-form-btn" type="submit">Submit</button>
+            </div>
+          </form>
+          <div>
+            {{form.errors}} {% for message in messages %}
+            <h5 style="color: red">{{message}}</h5>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="../static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/login/vendor/bootstrap/js/popper.js"></script>
+    <script src="../static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/login/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../static/login/vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+      $(".js-tilt").tilt({
+        scale: 1.1,
+      });
+    </script>
+    <!--===============================================================================================-->
+    <script src="../static/login/js/main.js"></script>
+
+    <script>
+      /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+//We start indexing at one because CSRF_token is considered and input field 
+*/
+
+      //Query All input fields
+      var form_fields = document.getElementsByTagName("input");
+      form_fields[1].placeholder = "_____Enter Address__________________";
+
+      form_fields[2].placeholder = "_____Enter Parish_____________________";
+      form_fields[3].placeholder = "_____Enter Mobile_____________________";
+      form_fields[4].placeholder = "__________________________";
+
+      for (var field in form_fields) {
+        form_fields[field].className += " form-control";
+      }
+    </script>
+  </body>
+</html>
+{%endblock%}

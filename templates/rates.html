@@ -1,0 +1,230 @@
+{% block content %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="TemplateMo" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>SizExpress - Rates</title>
+    <!--
+
+Lava Landing Page
+
+https://templatemo.com/tm-540-lava-landing-page
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/home/assets/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/home/assets/css/font-awesome.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/home/assets/css/templatemo-lava.css"
+    />
+
+    <link rel="stylesheet" href="../static/home/assets/css/owl-carousel.css" />
+
+    <style>
+      @media only screen and (max-width: 480px) {
+        .howitworks {
+          margin-bottom: -50px;
+        }
+      }
+
+      footer {
+        background: #1a1e25;
+        color: #868c96;
+      }
+
+      footer p {
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      footer img {
+        width: 44px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+      <div class="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a
+                href="{% url 'home' %}"
+                class="logo"
+                style="color: blue !important; font-style: normal !important"
+              >
+                SizExpress
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li class="scroll-to-section">
+                  <a href="{% url 'home' %}" class="">Home</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="#about" class="">How It Works</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="{% url 'rates' %}" class="menu-item">Rates</a>
+                </li>
+                <li class="submenu">
+                  <a href="javascript:;">Contact Us </a>
+                  <ul>
+                    <li><a onclick="callus()" class="">Call</a></li>
+                    <li>
+                      <a onclick="whatsapp()" class="menu-item">Whatsapp</a>
+                    </li>
+                    <li><a onclick="email()" class="menu-item">Email</a></li>
+                    <li><a href="" class="menu-item">Instagram</a></li>
+                    <li><a href="" class="menu-item">Facebook</a></li>
+                  </ul>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="submenu">
+                  <a class="">Hello,{{user.first_name }}</a>
+                  <ul>
+                    <li>
+                      <a href="{% url 'profile' %}" class="">My Account</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="{% url 'logout' %}" class="">Logout</a>
+                </li>
+                {%else%}
+                <li class="scroll-to-section">
+                  <a href="{% url 'register'%}" class="">Signup</a>
+                </li>
+                <li class="scroll-to-section">
+                  <a href="{% url 'login' %}" class="">Login</a>
+                </li>
+                {%endif%}
+              </ul>
+              <a class="menu-trigger">
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div
+      style="
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: DodgerBlue;
+        margin-top: 80px;
+      "
+    >
+      <img
+        src="../static/home/assets/images/rates.png"
+        style="width: 100%; height: 100%"
+      />
+    </div>
+
+    <div style="margin-top: 50px">
+      <p style="color: black">* Over 10Lbs - Each additional Pound is $3USD</p>
+    </div>
+
+    <div style="margin-top: 50px">
+      <p style="color: black">
+        * Each package is subject to a processing fee of $1.50 USD for package
+        value under $50 USD
+      </p>
+    </div>
+
+    <div style="margin-top: 50px">
+      <p style="color: black">
+        * Each package is subject to a processing fee of $5.00 USD for package
+        value Over $50 USD
+      </p>
+    </div>
+
+    <div style="margin-top: 50px">
+      <p style="color: black">
+        * Duties,Taxes and Fees will be charged on packages with an invoice
+        exceeding the value of $50 USD. <b> Please Note:</b> Packages deemed by
+        Jamaica Customs Agency to have a value exceeding $50 USD or containing
+        commercial quantities or for commercial use will attract Customs Fees.
+      </p>
+    </div>
+    <footer>
+      <p>
+        Copyright &copy; 2021
+        <a style="color: #fab702">SizExpress</a> All Rights Reserved. Website
+        Created By: <a style="color: #fab702"> steamwebdesignz@gmail.com </a>
+      </p>
+    </footer>
+
+    <script>
+      function callus() {
+        alert("Hey! Call Us At: (876) 885-1855 ");
+      }
+
+      function whatsapp() {
+        alert("Hey! Whatsapp us At : (876) 885-1855   ");
+      }
+
+      function email() {
+        alert("Hey! Email Us At: sizexpress.com@gmail.com  ");
+      }
+    </script>
+
+    <script src="../static/home/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../static/home/assets/js/popper.js"></script>
+    <script src="../static/home/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="../static/home/assets/js/owl-carousel.js"></script>
+    <script src="../static/home/assets/js/scrollreveal.min.js"></script>
+    <script src="../static/home/assets/js/waypoints.min.js"></script>
+    <script src="../static/home/assets/js/jquery.counterup.min.js"></script>
+    <script src="../static/home/assets/js/imgfix.min.js"></script>
+
+    <!-- Global Init -->
+    <script src="../static/home/assets/js/custom.js"></script>
+  </body>
+</html>
+
+{%endblock%}
